@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react';
+import Header from './components/Header/Header';
+import Main from './components/Main/Main';
+import Footer from './components/Footer/Footer';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export class App extends Component {
+  actors = [
+    'Tom Hanks',
+    'Robin Wright',
+    'Gary Sinise',
+    'Mykelti Williamson',
+    'Sally Field',
+  ];
+  render() {
+    return (
+      <div className="App">
+        <Header />
+        <Main actors={this.actors}/>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;
